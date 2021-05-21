@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import img from '../../assets/meals.jpeg';
 import classes from './Header.module.css';
 import HeaderCartButton from './HeaderCartButton';
 
-const Header = props => {
+const Header = props => { 
+
     return (
         <React.Fragment>
             <header className={classes.header}>
                 <h1>React Meals</h1>
-                <HeaderCartButton/>
+                <HeaderCartButton
+                    show={props.onShowCart}
+                    hide={props.onHideCart}
+
+                />
             </header>
             <div className={classes['main-image']}>
                 <img
